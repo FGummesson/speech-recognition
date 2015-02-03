@@ -1,10 +1,14 @@
-function Frame = BlockFrame( input )
+function Frames = BlockFrame(input, L, D )
 % Framing the signal into blocks with 160 samples each and perform a
-% hamming window on each block.
-%   Detailed explanation goes here
+% windowing on each block.
+% Detailed explanation goes here
+% L is the length of each buffer segment, D is the overlap
+y = buffer(input, L, D);
+window = hanning(L);
+for i=1:length(y)
+    y(:, i) = window.*y(:,i);    
+end
 
-y = buffer(input, 160, 80);
-
-Frame = y;
+Frames = y;
 end
 

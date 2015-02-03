@@ -12,7 +12,7 @@ input_1 = pre_emph(input_0);
 % Block framing the signal, function
 input_2 = block_frame(input_1);
 
-% Level detection, function
+% Level detection using zero-crossing rate, function
 input_3 = level_detect(input_2);
 
 % Schur-algorithm -> create matrix form database, function
