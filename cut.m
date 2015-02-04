@@ -1,4 +1,4 @@
-function [ signal ] = split( signal, b_length, overlap, threshold )
+function [ signal ] = cut( signal, b_length, overlap, threshold )
 % Cut out the important values of a speech signal.
     
     y = buffer(signal, b_length, overlap);
