@@ -23,11 +23,13 @@ input_0 = rm_noise(input);
 
 
 % pre-emhasis filter with a = 0.95-98, function
-input_1 = pre_emph(input);
+input_1 = pre_emph(input_0);
 
 
 % Remove unecessary parts of signal at beginning and end
 
+
+% Add zeros such that there will be 
 input = [input' zeros(1, L - mod(length(input), L))];
 
 
@@ -36,7 +38,6 @@ input = [input' zeros(1, L - mod(length(input), L))];
 input_2 = block_frame(input_1, L, D);
 
 
-P = 10;
 % Schur-algorithm -> create matrix form database, function
 input_3 = schur_algo(input_2, P);
 
