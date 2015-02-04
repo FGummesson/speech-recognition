@@ -26,34 +26,5 @@ function [ signal ] = cut( signal, b_length, overlap, threshold )
     signal = y(:);
     signal = signal(first:last);
     
-    
-    
-    
-    
-    
-    
-    %%
-%     
-%     i = 1;
-%     while i < length(signal)
-%         if signal(i) ~= 0
-%             break;
-%         end
-%         i = i +1;
-%     end
-%     
-%     
-%     j = length(signal);
-%     
-%     while j > i
-%        if signal(j) ~= 0
-%            break;
-%        end
-%        j = j -1;
-%     end
-%     
-%     signal = signal(i:j);
-
-    
 end
 
