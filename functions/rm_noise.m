@@ -1,5 +1,7 @@
 function output = rm_noise(input)
 % remove noise from speech signal
-output = filter([1, -1], [1,-0.92], input);
+lp = LowPassFilter;
+output = filter([1, -1], [1,-0.92], input); % high pass filter
+output = filter(lp.Numerator,1, output);    % low pass filter
 
 end
