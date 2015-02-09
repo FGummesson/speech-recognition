@@ -3,8 +3,8 @@ close all;
 clear all;
 load task5.mat
 
-P = 15;
-L = 100;
+P = 12;
+L = 320;
 D = L/2;
 add_to_db(t1, 'four', L, D, P, 16000, 0);
 

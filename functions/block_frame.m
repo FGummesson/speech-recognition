@@ -4,7 +4,7 @@ function Frames = block_frame(input, L, D )
 % Detailed explanation goes here
 % L is the length of each buffer segment, D is the overlap
 y = buffer(input, L, D);
-window = hanning(L);
+window = hamming(L);
 storlek = size(y);
 for i=1:storlek(2)
     y(:, i) = window.*y(:,i);    

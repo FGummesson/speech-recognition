@@ -65,7 +65,7 @@ if sound ==1
 end
 
 % Remove unecessary parts of signal at beginning and end
-threshold = 0.12;
+threshold = 0.07;
 [input_2, norms] = cut(input_1, 100, threshold);
 
 if sound == 1
@@ -100,7 +100,7 @@ input_5 = schur_algo(input_4, P);
 
 
 % Divide into subsets and calculate the mean of the coefficients
-M = 10; % number of subsets
+M = 12; % number of subsets
 
 db = create_subsets(input_5, M);
 

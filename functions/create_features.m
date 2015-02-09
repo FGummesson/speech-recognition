@@ -59,11 +59,12 @@ if sound ==1
     
     figure (2)
     fft_(input_1, length(input_1), fs, 223)
+    
 end
 
 % Remove unecessary parts of signal at beginning and end
-threshold = 0.12;
-input_2 = cut(input_1, 100, threshold);
+threshold = 0.07;
+[input_2, norms] = cut(input_1, 100, threshold);
 
 
 if sound == 1
@@ -78,6 +79,10 @@ if sound == 1
     
     figure (2)
     fft_(input_2, length(input_2), fs, 224)
+    
+    figure (3)
+    plot(norms);
+    title('Norm of the signal given by cut function');
 end
 
 % Add zeros such that there will be a multiple of L samples
@@ -93,7 +98,7 @@ input_4 = block_frame(input_2, L, D);
 input_5 = schur_algo(input_4, P);
 
 % Divide into subsets and calculate the mean of the coefficients
-M = 10; % number of subsets
+M = 12; % number of subsets
 
 features = create_subsets(input_5, M);
 

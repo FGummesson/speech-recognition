@@ -12,7 +12,9 @@ for i = 1:storlek
     % eventuellt lägga in en debug test för nollvektor koll
     
 end
-%plot(output(3,:))
+firlp = FIRLP;
+K_filt = filter(firlp.Numerator, 1, output);
+
 end
 
 
