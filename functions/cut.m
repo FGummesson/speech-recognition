@@ -1,11 +1,11 @@
-function [ output, norms ] = cut( input, b_length, overlap, threshold )
+function [ output, norms ] = cut( input, b_length, threshold )
 % Cut out the important values of a speech signal.
     % cut(signal, b_length, overlap, threshold)
     % b_length = block length
     % overlap = amount of overlap in samples
     % threshold = when to start listening. Around 1.
     
-    y = buffer(input, b_length, overlap);
+    y = buffer(input, b_length, 0);
     
     n_cols = length(y(1,:));
     
