@@ -1,8 +1,8 @@
 
-function add_to_db(input, string, L, D, P, fs, sound)
+function create_features(input, string, L, D, P, fs, sound)
 
-% ADD_TO_DB  = (input, string, L, D, P, fs, sound)
-%   Adds a sound signals features vectors in the library, saved as a .mat file.
+% CREATE_FEATURES = (input, string, L, D, P, fs, sound)
+%   Creates features vectors of the input sound signal, saved as a .mat file.
 %   *input* is the soundsignal as a columnvector
 %   *string* is the name of the file,
 %   *L* is the length of the blocks, *D* is the overlap,
@@ -87,18 +87,17 @@ end
 input_4 = block_frame(input_2, L, D);
 
 
+
 % Schur-algorithm -> create matrix form database
 input_5 = schur_algo(input_4, P);
-
 
 % Divide into subsets and calculate the mean of the coefficients
 M = 8; % number of subsets
 
-db = create_subsets(input_5, M);
-
+features = create_subsets(input_5, M);
 
 string = strcat(string, '.mat');
-string = strcat('databases/', string);
+string = strcat('feature matrices/', string);
 
-save(string, 'db');
+save(string, 'features');
 end

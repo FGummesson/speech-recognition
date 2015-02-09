@@ -1,3 +1,36 @@
+test = [1 2 3 4 4 5 6 7 8 9];
+
+
+string = 'databases/testfile.mat';
+save(string, 'test')
+
+
+
+
+
+%%
+clc;
+close all;
+clear all;
+
+for i = 1:10
+    i
+    for k = 1: 5
+        k
+        if k == 3
+            break;           
+        end
+        
+    end
+    
+end
+
+
+
+
+
+
+%%
 close all;
 clear all;
 clc;
