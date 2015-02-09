@@ -100,7 +100,7 @@ input_5 = schur_algo(input_4, P);
 
 
 % Divide into subsets and calculate the mean of the coefficients
-M = 12; % number of subsets
+M = 10; % number of subsets
 
 db = create_subsets(input_5, M);
 
