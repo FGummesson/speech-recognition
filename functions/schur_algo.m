@@ -12,6 +12,7 @@ for i = 1:storlek
     % eventuellt lägga in en debug test för nollvektor koll
     
 end
+%plot(output(3,:))
 end
 
 

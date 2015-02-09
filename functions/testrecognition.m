@@ -15,8 +15,12 @@ load task5.mat
 load four.mat
 load 41.mat
 four0 = matching(db, db)
-four1 = matching(features , db)
+four_samma = matching(features , db)
 load 42.mat
-four2 = matching(features, db)
+four_man = matching(features, db)
 load 81.mat
-four3 = matching(features, db)
+four8 = matching(features, db)
+load 82.mat
+four8 = matching(features, db)
+load 91.mat
+four9 = matching(features, db)
