@@ -63,7 +63,7 @@ end
 
 % Remove unecessary parts of signal at beginning and end
 threshold = 1;
-input_2 = cut(input_1, 100, 0,threshold);
+input_2 = cut(input_1, 100, 0, threshold);
 
 figure (1)
 subplot(224)
