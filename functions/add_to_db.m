@@ -1,5 +1,5 @@
 
-function add_to_db(input, string, L, D, P, fs, sound)
+function add_to_db(input, string, L, D, P, fs,threshold,  sound)
 
 % ADD_TO_DB  = (input, string, L, D, P, fs, sound)
 %   Adds a sound signals features vectors in the library, saved as a .mat file.
@@ -9,6 +9,7 @@ function add_to_db(input, string, L, D, P, fs, sound)
 %   *P* is the number of reflections coefficients,
 %   *sound* set to 1 to listen to the signal along the steps
 %   *fs* is the sample frequency the input signal was sampled with
+%   *threshold* is the threshold the cut function uses
 
 
 
@@ -65,7 +66,6 @@ if sound ==1
 end
 
 % Remove unecessary parts of signal at beginning and end
-threshold = 0.07;
 [input_2, norms] = cut(input_1, 100, threshold);
 
 if sound == 1

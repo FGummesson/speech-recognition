@@ -1,5 +1,5 @@
 
-function create_features(input, string, L, D, P, fs, sound)
+function create_features(input, string, L, D, P, fs, threshold, sound)
 
 % CREATE_FEATURES = (input, string, L, D, P, fs, sound)
 %   Creates features vectors of the input sound signal, saved as a .mat file.
@@ -9,6 +9,7 @@ function create_features(input, string, L, D, P, fs, sound)
 %   *P* is the number of reflections coefficients,
 %   *sound* set to 1 to listen to the signal along the steps
 %   *fs* is the sample frequency the input signal was sampled with
+%   *threshold* is the level the cut function uses
 
 
 if sound == 1
@@ -63,7 +64,6 @@ if sound ==1
 end
 
 % Remove unecessary parts of signal at beginning and end
-threshold = 0.07;
 [input_2, norms] = cut(input_1, 100, threshold);
 
 
