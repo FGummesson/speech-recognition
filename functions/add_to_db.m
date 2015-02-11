@@ -80,11 +80,16 @@ if sound == 1
     ylabel('Amplitude');
     
     figure (2)
+    
     fft_(input_2, length(input_2), fs, 224)
     
     figure (3)
     plot(norms);
+    hold on
+    
+    plot(threshold * ones(1, length(norms)), '--');
     title('Norm of the signal given by cut function');
+    hold off
 end
 
 % Add zeros such that there will be a multiple of L samples
