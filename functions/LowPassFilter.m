@@ -8,7 +8,7 @@ function Hd = LowPassFilter
 % Equiripple Lowpass filter designed using the FIRPM function.
 
 % All frequency values are in Hz.
-Fs = 16000;  % Sampling Frequency
+Fs = 8000;  % Sampling Frequency
 
 Fpass = 4000;            % Passband Frequency
 Fstop = 6000;            % Stopband Frequency

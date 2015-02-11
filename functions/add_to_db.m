@@ -106,7 +106,7 @@ db = create_subsets(input_5, M);
 
 
 string = strcat(string, '.mat');
-string = strcat('databases/', string);
+%string = strcat('databases/', string);
 
 save(string, 'db');
 end
