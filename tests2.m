@@ -2,7 +2,7 @@ clc;
 close all;
 clear all;
 load task5.mat
-
+% låd kod: 369
 P = 12;
 L = 320;
 D = L/2;
