@@ -10,8 +10,8 @@ function Hd = LowPassFilter
 % All frequency values are in Hz.
 Fs = 8000;  % Sampling Frequency
 
-Fpass = 4000;            % Passband Frequency
-Fstop = 6000;            % Stopband Frequency
+Fpass = 2000;            % Passband Frequency
+Fstop = 4000;            % Stopband Frequency
 Dpass = 0.057501127785;  % Passband Ripple
 Dstop = 0.0001;          % Stopband Attenuation
 dens  = 20;              % Density Factor

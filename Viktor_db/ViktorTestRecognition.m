@@ -6,19 +6,19 @@ load task5.mat
 % Call the function 'matching' to calculate the error of the 
 % word-matching. Input is the feature matrix and data base
 
-load Right1
+load Viktor_db/database/Right1
 right1 = db;
 
-load Right2
+load Viktor_db/database/Right2
 right2 = db;
 
-load Right3
+load Viktor_db/database/Right3
 right3 = db;
 
-load Right4
+load Viktor_db/database/Right4
 right4 = db;
 
-load Right5
+load Viktor_db/database/Right5
 right5 = db;
 
 r1_mot_r1 = matching(right1, right1)
