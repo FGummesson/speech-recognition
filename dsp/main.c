@@ -69,7 +69,7 @@ static void keyboard(int sig)
     unsigned int keys = dsp_get_keys();
     
     // Button 1 (bit value 1) turns on the filering in the process callback.
-    // Button 2 (bit value 2) turns off the filering in the process callback.
+    // Button 2 (bit value 2) turns off the filering ifn the process callback.
     if(keys & 1) {
         enable = 1;
     } else if(keys & 2) {
