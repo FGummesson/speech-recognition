@@ -30,6 +30,7 @@ l1_l2 = matching(dbl1, dbl2)
 l1_l3 = matching(dbl1, dbl3)
 l1_l4 = matching(dbl1, dbl4)
 l1_l5 = matching(dbl1, dbl5)
+lvec= [l1_l2  l1_l3  l1_l4  l1_l5];
 error_mean_left = (l1_l2 + l1_l3 + l1_l4 + l1_l5)/4
 
 
@@ -40,7 +41,19 @@ l1_r2 = matching(dbl1, dbr2)
 l1_r3 = matching(dbl1, dbr3)
 l1_r4 = matching(dbl1, dbr4)
 l1_r5 = matching(dbl1, dbr5)
+rvec = [l1_r1  l1_r2  l1_r3  l1_r4  l1_r5];
 error_mean_right = (l1_r1 + l1_r2 + l1_r3 + l1_r4 + l1_r5)/5
 
 
+if error_mean_left < error_mean_right
+    if min(lvec)< min(rvec)
+        disp('Vänster');
+    end
+elseif error_mean_left > error_mean_right
+    if min(lvec)> min(rvec)
+        disp('Höger');
+    end    
+else
+    disp('Inget av orden i databasen');
+end
 

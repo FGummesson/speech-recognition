@@ -2,7 +2,7 @@ clc;
 close all;
 clear all;
 % låd kod: 369
-P = 11;
+P = 9;
 L = 160;
 D = L/2;
 threshold = 0.05;
@@ -15,7 +15,7 @@ load Left2.mat
 add_to_db(rec, 'Hanna_db/database/l2', L, D, P, 8000, threshold, 0);
 
 load Left3.mat
-add_to_db(rec, 'Hanna_db/database/l3', L, D, P, 8000, threshold, 0);
+add_to_db(rec, 'Hanna_db/database/l3', L, D, P, 8000, threshold, 1);
 
 load Left4.mat
 add_to_db(rec, 'Hanna_db/database/l4', L, D, P, 8000, threshold, 0);
