@@ -1,5 +1,5 @@
 
-function add_to_db(input, string, L, D, P, fs,threshold,  sound)
+function add_to_db(input, string, L, D, P, fs,threshold, gamma, sound)
 
 % ADD_TO_DB  = (input, string, L, D, P, fs, sound)
 %   Adds a sound signals features vectors in the library, saved as a .mat file.
@@ -48,7 +48,7 @@ if sound ==1
 end
 
 % pre-emhasis filter with a = 0.95-98, function
-input_1 = pre_emph(input_0);
+input_1 = pre_emph(input_0, gamma);
 
 
 if sound ==1
@@ -66,7 +66,7 @@ if sound ==1
 end
 
 % Remove unecessary parts of signal at beginning and end
-[input_2, norms] = cut(input_1, 100, threshold);
+[input_2, norms] = cut_baby(input_1, 100, threshold);
 
 if sound == 1
     pause(3)
