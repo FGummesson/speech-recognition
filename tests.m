@@ -1,3 +1,27 @@
+close all;
+clear all;
+clc;
+
+load task5.mat
+x = t1;
+x = x(1000:1900);
+temp = '';
+for i = 1:length(x) 
+    %if i ~= length(x) 
+    temp = strcat(temp, 'x[',num2str( i -1) , ']= ', num2str(x(i)), '; \n' );
+    %else
+        %temp = strcat(temp, num2str(x(i)));        
+    %end
+end
+
+
+temp1 = rm_noise(x);
+temp1 = pre_emph(temp1);
+figure (1)
+plot(temp1, 'r');
+hold on;
+
+%%
 test = [1 2 3 4 4 5 6 7 8 9];
 
 
