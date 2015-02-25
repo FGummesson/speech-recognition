@@ -56,7 +56,7 @@ function [ output, norms ] = cut_baby( input, b_length, threshold )
     for i = fliplr(1:n_cols)
         temp = y(:,i);
         new_threshold = norm(temp)*0.05 + threshold*0.95;
-        if new_threshold > 1.09 * threshold
+        if new_threshold > 1.12 * threshold
             counter = counter+9;
             if counter > 45
             last = (i + 2) * b_length;

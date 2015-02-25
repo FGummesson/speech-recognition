@@ -3,7 +3,7 @@ clear all;
 clc;
 sample = 160;
 tot_sample = 7 * sample;
-load newH3.mat;
+load newH4.mat;
 x = rec;
 %x = rec(5000:end);
 %x = x(5000:end);
@@ -66,7 +66,7 @@ hold on;
 test = [1 2 3 4 4 5 6 7 8 9];
 
 
-string = 'databases/testfile.mat';
+string = 'Viktor_db/database/testfile.mat';
 save(string, 'test')
 
 
