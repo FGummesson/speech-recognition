@@ -1,11 +1,12 @@
 %close all;
 clear all;
 clc;
-
+sample = 160;
+tot_sample = 7 * sample;
 load newH3.mat;
 x = rec;
 %x = rec(5000:end);
-x = x(5000:end);
+%x = x(5000:end);
 % x = buffer(x, 160, 80);
 % x = x(:,2:8);
 
@@ -13,8 +14,7 @@ figure (1)
 subplot 221
 plot(x)
 title('original signal');
-sample = 160;
-tot_sample = 7 * sample;
+
 x1 = rm_noise(x);
 subplot 222
 plot(x1)
