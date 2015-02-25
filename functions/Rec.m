@@ -4,6 +4,16 @@ function rec  = Rec(filename, rec_length, device_ID)
     %   filename - store file with this name
     %   rec_length - length och record in seconds
     %   device_ID - use -1 for default device
+    
+    %v?nster
+    %h?ger
+    %fram?t
+    %backa
+    %?ka
+    %s?nk
+    %right
+    %left
+    
     Fs = 8000; %sample rate [S/s]
 
     recObj = audiorecorder(Fs, 16, 1, device_ID); %Creates a record object with 8k S/s, 16 bit, one channel.

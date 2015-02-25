@@ -9,11 +9,11 @@ for i = 1:storlek
     [K, e] = schurrc(rxx); % e is the error and energy of the block
     output(:,i) = K;
     
-    % eventuellt lägga in en debug test för nollvektor koll
+    % eventuellt l?gga in en debug test f?r nollvektor koll
     
 end
-% firlp = FIRLP;
-% K_filt = filter(firlp.Numerator, 1, output);
+%firlp = FIRLP;
+K_filt = filter([1, -1], 1, output); %filter(firlp.Numerator, 1, output);
 
 end
 

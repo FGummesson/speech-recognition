@@ -1,3 +1,4 @@
+%{
 function Hd = FIRLP
 %FIRLP Returns a discrete-time filter object.
 
@@ -21,6 +22,9 @@ dens  = 20;              % Density Factor
 
 % Calculate the coefficients using the FIRPM function.
 b  = firpm(N, Fo, Ao, W, {dens});
+disp(N);
 Hd = dfilt.dffir(b);
 
 % [EOF]
+%}
+
