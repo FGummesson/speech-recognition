@@ -1,4 +1,4 @@
-function [ output, norms ] = cut( input, b_length, threshold )
+function [ output, norms ] = cut_baby( input, b_length, threshold )
 % Cut out the important values of a speech signal.
     % cut(signal, b_length, overlap, threshold)
     % b_length = block length

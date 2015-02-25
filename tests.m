@@ -1,3 +1,42 @@
+%close all;
+clear all;
+clc;
+
+load newH3.mat;
+x = rec;
+%x = rec(5000:end);
+x = x(5000:end);
+% x = buffer(x, 160, 80);
+% x = x(:,2:8);
+
+figure (1)
+subplot 221
+plot(x)
+title('original signal');
+sample = 160;
+tot_sample = 7 * sample;
+x1 = rm_noise(x);
+subplot 222
+plot(x1)
+title('after rm noise');
+x2 = pre_emph(x1);
+subplot 223
+plot(x2);
+title('after pre emph');
+
+[x3, norms] = cut_baby(x2, 100, 1);
+subplot 224
+plot(x3)
+title('after cut');
+
+
+
+
+
+
+
+
+%%
 close all;
 clear all;
 clc;
@@ -14,12 +53,14 @@ for i = 1:length(x)
     %end
 end
 
-
-temp1 = rm_noise(x);
-temp1 = pre_emph(temp1);
 figure (1)
+temp1 = rm_noise(x);
+plot(temp1);
+hold on;
+temp1 = pre_emph(temp1);
 plot(temp1, 'r');
 hold on;
+
 
 %%
 test = [1 2 3 4 4 5 6 7 8 9];
