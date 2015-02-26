@@ -1,4 +1,4 @@
-%close all;
+close all;
 clear all;
 clc;
 sample = 160;
@@ -6,7 +6,7 @@ tot_sample = 7 * sample;
 load newH4.mat;
 x = rec;
 %x = rec(5000:end);
-%x = x(5000:end);
+x = x(8100:end);
 % x = buffer(x, 160, 80);
 % x = x(:,2:8);
 
@@ -24,11 +24,11 @@ subplot 223
 plot(x2);
 title('after pre emph');
 
-[x3, norms] = cut_baby(x2, 100, 1);
+[x3, norms] = cut_baby(x2, 160, 8);
 subplot 224
 plot(x3)
 title('after cut');
-
+soundsc(x3)
 
 
 
