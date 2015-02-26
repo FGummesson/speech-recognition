@@ -22,16 +22,27 @@ title('after rm noise');
 x2 = pre_emph(x1);
 subplot 223
 plot(x2);
-title('after pre emph');
 
-[x3, norms] = cut_baby(x2, 160, 8);
+x_n = buffer(x2, 160, 80);
+x_n = x_n(:);
+x_n = x_n(1:960);
+
+title('after pre emph');
+str =[];
+for i = 1:5
+    for j = 1:(length(x_n))/6
+        str = strcat(str,'b', num2str(i), '[',num2str(j-1), ']', ' = ', num2str(x_n((i-1) * (length(x_n))/6 + j)),';\n');
+    end
+end
+
+[x3, norms] = cut_baby(x2, 160, 80, x_n);
 subplot 224
 plot(x3)
 title('after cut');
 soundsc(x3)
 
 
-
+%%
 
 
 
