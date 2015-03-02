@@ -12,15 +12,15 @@ function [ output, norms ] = cut_baby( input, b_length, threshold )
 disp('cut')
     norms = [];
     for i = 1:n_cols
-        norms = [norms, norm(y(:,i))]; 
+        norms = [norms, sum(abs(y(:,i)))]; 
     end
 
     counter = 0;
     first = 0;
-    threshold = norm(y(:,1));
+    threshold = sum(abs((y(:,1)));
     for i = 1:n_cols
         temp = y(:,i);
-        new_threshold = norm(temp)*0.05 + threshold*0.95;
+        new_threshold = sum(abs(temp))*0.05 + threshold*0.95;
         if new_threshold > 1.12*threshold % 1.09
             counter = counter+9;
             if counter > 45
@@ -51,11 +51,11 @@ disp('cut')
         first = 1;
     end
     last = n_cols * b_length;
-    threshold = norm(y(:,n_cols));
+    threshold = sum(abs(y(:,n_cols)));
     counter = 0;
     for i = fliplr(1:n_cols)
         temp = y(:,i);
-        new_threshold = norm(temp)*0.05 + threshold*0.95;
+        new_threshold = sum(abs(temp))*0.05 + threshold*0.95;
         if new_threshold > 1.12 * threshold
             counter = counter+9;
             if counter > 45
