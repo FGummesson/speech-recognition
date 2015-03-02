@@ -24,11 +24,15 @@ subplot 223
 plot(x2);
 title('after pre emph');
 
-[x3, norms] = cut_baby(x2, 160, 80);
+[x3, norms] = cut_baby(x2, 160, 8);
 subplot 224
 plot(x3)
 title('after cut');
-soundsc(x3);
+soundsc(x3)
+
+
+
+
 
 
 
