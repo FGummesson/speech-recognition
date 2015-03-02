@@ -14,7 +14,7 @@ function add_to_db(input, string, L, D, P, fs,threshold, gamma, sound)
 
 
 if sound == 1
-    soundsc(input, fs)
+    %soundsc(input, fs)
     figure (1)
     subplot(221)
     plot(input)
@@ -34,8 +34,8 @@ input_0 = rm_noise(input);
 
 
 if sound ==1
-    pause(3)
-    soundsc(input_0, fs);
+    %pause(3)
+    %soundsc(input_0, fs);
     figure (1)
     subplot(222)
     plot(input_0)
@@ -52,8 +52,8 @@ input_1 = pre_emph(input_0, gamma);
 
 
 if sound ==1
-    pause(3)
-    soundsc(input_1, fs);
+    %pause(3)
+    %soundsc(input_1, fs);
     figure (1)
     subplot(223)
     plot(input_1)
@@ -66,10 +66,10 @@ if sound ==1
 end
 
 % Remove unecessary parts of signal at beginning and end
-[input_2, norms] = cut_baby(input_1, 100, threshold);
+[input_2, norm] = cut_baby(input_1, L, D);
 
 if sound == 1
-    pause(3)
+    %pause(3)
     soundsc(input_2, fs);
     
     figure (1)
@@ -82,14 +82,6 @@ if sound == 1
     figure (2)
     
     fft_(input_2, length(input_2), fs, 224)
-    
-    figure (3)
-    plot(norms);
-    hold on
-    
-    plot(threshold * ones(1, length(norms)), '--');
-    title('Norm of the signal given by cut function');
-    hold off
 end
 
 % Add zeros such that there will be a multiple of L samples
