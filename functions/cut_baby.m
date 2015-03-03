@@ -8,16 +8,17 @@ function [ output, norms ] = cut_baby( input, b_length, threshold )
     y = buffer(input, b_length, 0);
     
     n_cols = length(y(1,:));
-    %old_threshold = threshold;
-disp('cut')
+    h = hamming(length(y(:,1)));
+
     norms = [];
     for i = 1:n_cols
+        y(:,i) = y(:,i).*h;
         norms = [norms, sum(abs(y(:,i)))]; 
     end
 
     counter = 0;
     first = 0;
-    threshold = sum(abs((y(:,1)));
+    threshold = sum(abs((y(:,1))));
     for i = 1:n_cols
         temp = y(:,i);
         new_threshold = sum(abs(temp))*0.05 + threshold*0.95;
@@ -36,16 +37,6 @@ disp('cut')
         threshold = new_threshold;
     end
     
-%{  
-    first = 0;
-    for i = 1:n_cols
-        temp = y(:,i);
-        if norm(temp) > threshold
-            first = ((i -4) * b_length);
-            break;
-        end
-    end
-%}
     
     if first < 1
         first = 1;
@@ -75,8 +66,6 @@ disp('cut')
         last = length(input);
     end
     
-%     output = y(:);
-%     output = output(first:end); % f?r ett test, kommenteras bort annars
      output = y(first:last);
     
 end
