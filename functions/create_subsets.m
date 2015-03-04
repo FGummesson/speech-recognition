@@ -44,3 +44,13 @@ for i = 1:M
         output(:, i) = output(:, i)./(integer); % calc. mean
     end
 end
+
+
+
+
+
+
+
+
+
+

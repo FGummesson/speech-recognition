@@ -1,6 +1,27 @@
 close all;
 clear all;
 clc;
+
+%hamming coefficients for DSP
+N = 160;
+ham = hamming(N);
+
+
+temp = '';
+for i = 1:length(ham) 
+    %if i ~= length(x) 
+    temp = strcat(temp, 'h[',num2str( i -1) , ']= ', num2str(ham(i)), '; \n' );
+    %else
+        %temp = strcat(temp, num2str(x(i)));        
+    %end
+end
+
+
+
+%%
+close all;
+clear all;
+clc;
 sample = 160;
 tot_sample = 7 * sample;
 load newH4.mat;
@@ -54,12 +75,13 @@ for i = 1:length(x)
 end
 
 figure (1)
+plot(x, 'g');
+hold on;
 temp1 = rm_noise(x);
-plot(temp1);
-hold on;
+%plot(temp1);
 temp1 = pre_emph(temp1);
-plot(temp1, 'r');
-hold on;
+plot(temp1, 'm');
+legend('original','after rm noise and pre emph');
 
 
 %%
