@@ -7,6 +7,7 @@ b1.reflect[5] = -0.020611;
 b1.reflect[6] = 0.204298;
 b1.reflect[7] = 0.556451;
 b1.reflect[8] = 0.290767;
+energy = -1
 
 b2.reflect[1] = -0.108017;
 b2.reflect[2] = 0.300014;
@@ -16,6 +17,7 @@ b2.reflect[5] = -0.022952;
 b2.reflect[6] = 0.242286;
 b2.reflect[7] = 0.492257;
 b2.reflect[8] = 0.579527;
+energy = -1
 
 b3.reflect[1] = -0.369800;
 b3.reflect[2] = 0.265097;
@@ -25,6 +27,7 @@ b3.reflect[5] = -0.087255;
 b3.reflect[6] = 0.274731;
 b3.reflect[7] = 0.283151;
 b3.reflect[8] = 0.567573;
+energy = -1
 
 b4.reflect[1] = 0.229344;
 b4.reflect[2] = 0.376763;
@@ -34,6 +37,7 @@ b4.reflect[5] = -0.250766;
 b4.reflect[6] = 0.040391;
 b4.reflect[7] = -0.175504;
 b4.reflect[8] = 0.410116;
+energy = -1
 
 b5.reflect[1] = 0.374677;
 b5.reflect[2] = 0.383006;
@@ -43,6 +47,7 @@ b5.reflect[5] = -0.073473;
 b5.reflect[6] = 0.040857;
 b5.reflect[7] = -0.127503;
 b5.reflect[8] = 0.412332;
+energy = -1
 
 b6.reflect[1] = -0.056307;
 b6.reflect[2] = 0.274022;
@@ -52,6 +57,7 @@ b6.reflect[5] = 0.014756;
 b6.reflect[6] = 0.113885;
 b6.reflect[7] = -0.089181;
 b6.reflect[8] = 0.152184;
+energy = -1
 
 b7.reflect[1] = -0.058735;
 b7.reflect[2] = 0.220004;
@@ -61,6 +67,7 @@ b7.reflect[5] = -0.070595;
 b7.reflect[6] = 0.131359;
 b7.reflect[7] = -0.113758;
 b7.reflect[8] = 0.169148;
+energy = -1
 
 b8.reflect[1] = -0.054113;
 b8.reflect[2] = 0.291700;
@@ -70,6 +77,7 @@ b8.reflect[5] = -0.005998;
 b8.reflect[6] = 0.192804;
 b8.reflect[7] = -0.008055;
 b8.reflect[8] = 0.173234;
+energy = -1
 
 b9.reflect[1] = -0.159819;
 b9.reflect[2] = 0.226614;
@@ -79,6 +87,7 @@ b9.reflect[5] = -0.113936;
 b9.reflect[6] = 0.018034;
 b9.reflect[7] = 0.356453;
 b9.reflect[8] = 0.135624;
+energy = -1
 
 b10.reflect[1] = -0.628922;
 b10.reflect[2] = 0.553061;
@@ -88,6 +97,7 @@ b10.reflect[5] = -0.262979;
 b10.reflect[6] = -0.040791;
 b10.reflect[7] = 0.678387;
 b10.reflect[8] = 0.190299;
+energy = -1
 
 b11.reflect[1] = -0.793944;
 b11.reflect[2] = 0.859190;
@@ -97,6 +107,7 @@ b11.reflect[5] = 0.175533;
 b11.reflect[6] = -0.015378;
 b11.reflect[7] = 0.578458;
 b11.reflect[8] = 0.036598;
+energy = -1
 
 b12.reflect[1] = -0.816809;
 b12.reflect[2] = 0.331319;
@@ -106,5 +117,18 @@ b12.reflect[5] = -0.415570;
 b12.reflect[6] = 0.222874;
 b12.reflect[7] = 0.054078;
 b12.reflect[8] = 0.229563;
+energy = -1
 
 version_t version1; 
+version1.version[0] = b1;
+version1.version[1] = b2;
+version1.version[2] = b3;
+version1.version[3] = b4;
+version1.version[4] = b5;
+version1.version[5] = b6;
+version1.version[6] = b7;
+version1.version[7] = b8;
+version1.version[8] = b9;
+version1.version[9] = b10;
+version1.version[10] = b11;
+version1.version[11] = b12;
