@@ -95,7 +95,7 @@ fclose(fid);
 % 	b2.reflect[1] = 3;
 % 	b2.energy = -1;
 % 
-% 	b3.reflect[0] = 3;
+% 	b3.reflect[0] = 3; 
 % 	b3.reflect[1] = 4;
 % 	b3.energy = -1;
 % 
