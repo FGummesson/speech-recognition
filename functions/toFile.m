@@ -3,28 +3,52 @@ clear all,
 close all;
 
 N_WORDS = 2;
-N_VERSIONS = 2;
+N_VERSIONS = 5;
 SUBSET_LENGTH = 12;
 N_REFLEC = 9;
 
 current_database =[];
 
 %HÖGER VERSIONS
-load r1.mat;
+load Hanna_db/database/r1.mat;
 s.name = 'right';
 s.reflec = db;
 current_database = [current_database s];
-load r2.mat;
+load Hanna_db/database/r2.mat;
+s.name = 'right';
+s.reflec = db;
+current_database = [current_database s];
+load Hanna_db/database/r3.mat;
+s.name = 'right';
+s.reflec = db;
+current_database = [current_database s];
+load Hanna_db/database/r4.mat;
+s.name = 'right';
+s.reflec = db;
+current_database = [current_database s];
+load Hanna_db/database/r5.mat;
 s.name = 'right';
 s.reflec = db;
 current_database = [current_database s];
 
 %VÄNSTER VERSIONS
-load l1.mat;
+load Hanna_db/database/l1.mat;
 s.name = 'left';
 s.reflec = db;
 current_database = [current_database s];
-load l2.mat;
+load Hanna_db/database/l2.mat;
+s.name = 'left';
+s.reflec = db;
+current_database = [current_database s];
+load Hanna_db/database/l3.mat;
+s.name = 'left';
+s.reflec = db;
+current_database = [current_database s];
+load Hanna_db/database/l4.mat;
+s.name = 'left';
+s.reflec = db;
+current_database = [current_database s];
+load Hanna_db/database/l5.mat;
 s.name = 'left';
 s.reflec = db;
 current_database = [current_database s];

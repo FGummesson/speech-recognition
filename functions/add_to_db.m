@@ -1,5 +1,5 @@
 
-function add_to_db(input, string, L, D, P, fs,threshold, gamma, sound)
+function add_to_db(input, string, L, D, P, M, fs, gamma, sound)
 
 % ADD_TO_DB  = (input, string, L, D, P, fs, sound)
 %   Adds a sound signals features vectors in the library, saved as a .mat file.
@@ -97,7 +97,6 @@ input_5 = schur_algo(input_4, P);
 
 
 % Divide into subsets and calculate the mean of the coefficients
-M = 12; % number of subsets
 
 db = create_subsets(input_5, M);
 
