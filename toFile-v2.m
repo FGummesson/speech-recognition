@@ -7,7 +7,7 @@ N_VERSIONS = 12;
 SUBSET_LENGTH = 12;
 N_REFLEC = 9;
 
-current_database =[];
+current_database =[]; %struct vektor
 
 %HÖGER VERSIONS
 load Hanna_db/database/r1.mat;
@@ -110,51 +110,27 @@ s.name = 'left';
 s.reflec = db;
 current_database = [current_database s];
 
-
-
-
 formatSpec = 'b%d.reflect[%d] = %f;\n';
 fid = fopen('test.txt', 'w');
 fprintf(fid, '#include "load_db.h" \n\nvoid load_db(db_t* current_db){\n\n');
-tempstr = '\tblock_t ';
-
-% strcat för b1 b2 .. strängen
-for i= 1:SUBSET_LENGTH
-   tempstr = strcat(tempstr, ' b', num2str(i-1));
-   if (i < SUBSET_LENGTH )
-    tempstr = strcat(tempstr, ', ');
-   end
-   
-end
-tempstr = strcat(tempstr, '; \n');
-fprintf(fid, tempstr);
-fprintf(fid, '\tversion_t version; \n');
-fprintf(fid, '\tword_t word; \n');
-fprintf(fid, '\tdb_t db; \n');
 
 counter = 0;
 
+
 for i = 1:N_WORDS
     for j = 1:N_VERSIONS   
-        counter = counter + 1;
         for col = 1:SUBSET_LENGTH
+            formatSpec = 'const float pm reflec%d%d%d%d[N_REFLEC] = {';
+            fprintf(fid, formatSpec, i,j,col, row);
             for row = 1:N_REFLEC
-                formatSpec = '\tb%d.reflect[%d] = %f;\n';
-                fprintf(fid, formatSpec,col-1,row -1,current_database(counter).reflec(row, col));                
+                formatSpec('%f, ');
+                fprintf(fid, formatSpec, current_database(counter).reflec(row, col));
             end            
-            fprintf(fid, '\tb%d.energy = -1;\n', col-1); % hämta den riktiga energin?
-            fprintf(fid, '\n');
-            formatSpec = '\tversion.subset[%d] = b%d;\n \n';
-            fprintf(fid, formatSpec, col -1 ,col-1  );
+
         end
-        formatSpec = '\tword.versions[%d] = version;\n \n';
-        fprintf(fid, formatSpec, j-1); 
+
 
     end
-        formatSpec = '\tword.name = "%s";\n \n';
-        fprintf(fid, formatSpec, current_database(counter).name);
-        formatSpec = '\tdb.words[%d] = word;\n \n';
-        fprintf(fid, formatSpec, i -1);
 
 end
 
